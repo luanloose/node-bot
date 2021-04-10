@@ -1,0 +1,19 @@
+{
+  "name": "node-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:luanloose/node-bot.git",
+  "author": "luanloose <luanloose@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon -L src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "node-emoji": "^1.10.0",
+    "node-telegram-bot-api": "^0.52.0",
+    "nodemon": "^2.0.7",
+    "puppeteer": "^8.0.0"
+  }
+}
