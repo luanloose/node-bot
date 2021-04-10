@@ -30,5 +30,4 @@ COPY . .
 EXPOSE 3000
 
 # Rodar script yarn start
-#CMD [ "yarn", "start" ]
-CMD [ "NODE_URLS=http://*:$PORT", "yarn", "start" ]
+CMD [ "yarn", "start" ]
