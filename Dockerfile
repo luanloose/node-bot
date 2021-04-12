@@ -32,3 +32,4 @@ COPY . .
 
 # Rodar script
 #CMD [ "node", "src/index.js" ]
+CMD NODE_URLS=http://*:$PORT node src/index.js
