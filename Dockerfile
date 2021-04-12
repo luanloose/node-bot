@@ -18,7 +18,7 @@ WORKDIR /usr/app
 
 # Copiar todos os arquivo package.json e yarn.lock
 COPY package*.json .
-COPY yarn*.lock .
+#COPY yarn*.lock .
 
 # Rodar comando yarn install para instalar bibliotecas
 RUN yarn install
