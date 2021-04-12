@@ -1,10 +1,15 @@
 const TelegramBot = require('node-telegram-bot-api');
 const ENV = require('dotenv').config();
+const port = process.env.PORT || 3000;
 const token = (process.env.TOKEN || ENV.parsed.TOKEN);
-const bot = new TelegramBot(token, { polling: true });
 const robo = require('./controllers/RoboController');
 const helper = require('./helpers/functions');
 const emoji = require('node-emoji');
+const express = require('express');
+const app = express();
+
+const bot = new TelegramBot(token);
+bot.setWebHook(process.env.HEROKU_URL + bot.token);
 
 const routes = {
     start: {
@@ -92,4 +97,21 @@ bot.onText(routes.help.route, (msg) => {
     }
 
     sentMsg(chatId, routeDescription);
+});
+
+app.use(express.urlencoded({
+    extended: true
+}));
+app.use(express.json());
+app.listen(port);
+
+app.post('/' + bot.token, (req, res) => {
+    bot.processUpdate(req.body);
+    res.sendStatus(200);
+});
+
+app.post('/teste' + bot.token, (req, res) => {
+    response.sendStatus(200).json({
+        status: "success"
+    });
 });
