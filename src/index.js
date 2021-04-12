@@ -1,6 +1,6 @@
 const TelegramBot = require('node-telegram-bot-api');
 const ENV = require('dotenv').config();
-const token = ENV.parsed.TOKEN;
+const token = (process.env.TOKEN || ENV.parsed.TOKEN);
 const bot = new TelegramBot(token, { polling: true });
 const robo = require('./controllers/RoboController');
 const helper = require('./helpers/functions');

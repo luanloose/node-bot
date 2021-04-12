@@ -28,7 +28,7 @@ RUN yarn install
 COPY . .
 
 # Definir porta
-EXPOSE 3000
+#EXPOSE 3000
 
 # Rodar script
-CMD [ "node", "src/index.js" ]
+#CMD [ "node", "src/index.js" ]
