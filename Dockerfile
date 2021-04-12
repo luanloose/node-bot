@@ -17,7 +17,8 @@ RUN apt-get install -y libasound2
 WORKDIR /usr/app
 
 # Copiar todos os arquivo package.json e yarn.lock
-COPY package*.json .
+COPY package.json .
+COPY package-lock.json .
 #COPY yarn*.lock .
 
 # Rodar comando yarn install para instalar bibliotecas
