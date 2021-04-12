@@ -110,8 +110,6 @@ app.post('/' + bot.token, (req, res) => {
     res.sendStatus(200);
 });
 
-app.post('/teste' + bot.token, (req, res) => {
-    response.sendStatus(200).json({
-        status: "success"
-    });
+app.get('/', (req, res) => {
+    res.redirect('https://luanloose.github.io/');
 });
