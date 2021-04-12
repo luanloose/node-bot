@@ -29,5 +29,5 @@ COPY . .
 # Definir porta
 EXPOSE 3000
 
-# Rodar script yarn start
-CMD [ "yarn", "start" ]
+# Rodar script
+CMD [ "node", "src/index.js" ]
