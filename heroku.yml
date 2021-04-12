@@ -1,18 +1,10 @@
-version: '3.1'
-
-services:
-  backend:
-    build: ./
-    volumes:
-      - './:/usr/app/'
-      - './package.json:/usr/app/package.json'
-      - './yarn.lock:/usr/app/yarn.lock'
-    container_name: node-bot
-    ports:
-      - "3000:3000"
-    networks: 
-      - rede-node-bot
-
-networks:
-  rede-node-bot:
-    driver: bridge
+setup:
+  config:
+    APP_NAME: luanloose-bot
+build:
+  docker:
+    web: Dockerfile
+  config:
+    NODE_ENV: production
+run:
+  web: node src/index.js
