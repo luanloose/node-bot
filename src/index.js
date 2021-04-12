@@ -1,10 +1,14 @@
 const TelegramBot = require('node-telegram-bot-api');
 const ENV = require('dotenv').config();
 const token = (process.env.TOKEN || ENV.parsed.TOKEN);
-const bot = new TelegramBot(token, { polling: true });
+const port = (process.env.PORT || 443);
+const bot = new TelegramBot(token, { polling: true, webHook: { port: port } });
 const robo = require('./controllers/RoboController');
 const helper = require('./helpers/functions');
 const emoji = require('node-emoji');
+
+
+
 
 const routes = {
     start: {
